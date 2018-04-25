@@ -3,6 +3,6 @@
     padding: 20px;
 }
 
-#subheading {
-    padding-top: 1em;
+h2.subheading {
+    padding-top: 2em !important;
 }
