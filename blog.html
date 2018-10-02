@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanda Hamilton Web Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="ui pointing top fixed menu">
+            <a class="item" href="index.html">
+                <img src="assets/AHamiltonSmallLogo.png">
+            </a>
+            <a class="item" href="index.html">Home</a>
+            <a class="item" href="index.html#about">About</a>
+            <a class="item" href="index.html#portfolio">Portfolio</a>
+            <a class="item" href="blog.html">Blog</a>
+            <a class="item" href="index.html#contact">Contact</a>
+        </div>
+    </header>
+
+<h1>Blog</h1>
+
+<article>
+    <h2>100 Days of Code</h2>
+    <h3>Day 1: <date datetime="2018/07/23">July 23, 2018</date></h3>
+    <p>
+        It's been too long since I've done any web development studying 
+        just for me. I've been cramming to learn WordPress and it's been
+        eating at me that I haven't been working on JavaScript. I'm 
+        constantly worrying that I will forget everything I've learned.
+    </p>
+    <p>
+        Today I had nothing to do as I sat around waiting to find out if I'd
+        be flying to Phoenix to help a friend. I decided to check in with my 
+        FreeCodeCamp progress while I waited and since I didn't leave today, 
+        I spent a lot of hours on Web Accessibility and FlexBox. It felt so
+        good to write some html and css. It's been too long.
+    </p>
+    <p>
+        After I decided my brain wouldn't retain anything if I moved onto the 
+        next section I logged into my even more neglected <a href='https://www.codewars.com/users/mandimh/completed_solutions'>
+        codewars account</a> and 
+        solved the <a href="https://www.codewars.com/kata/54ba84be607a92aa900000f1">Isograms challenge</a>.
+    </p>
+    <p>
+        The Isograms challenge requires that you take a string and return true if each letter in
+        the string is present only one time. If the letter is present more than once (consecutive or not),
+        then the function should return false. Immediately I knew I would need a Regular Expression. I 
+        also knew that my regex skills were rusty. I couldn't think of how to write a regex that would
+        test for a single occurance of a letter. So what I decided to do was to first split the string into
+        an array, then using a forEach loop, use each letter in a regular expression, and using .match()
+        return false if the array returned from .match() was longer than 1.
+    </p>
+    <p>
+        The solution worked, but I wished I had remembered how to use regular expressions to solve the 
+        challenge in fewer steps.
+    </p>
+   
+    <h3>Solution</h3> 
+    <p>
+        <code> isIsogram(str){<br></code>
+            <code>&nbsp;&nbsp;// split string to array <br></code>
+            <code>&nbsp;&nbsp;let arr = str.split(''); <br></code>
+            <code>&nbsp;&nbsp;// isTrue tracks whether each letter is found only once in the string
+            let isTrue = true;</code>
+            <br>
+            <br>
+            <code>&nbsp;&nbsp;// for each item in array, check the original string to see if there is 
+            <code>&nbsp;&nbsp;//more than 1 instance of that letter <br></code>
+            <code>&nbsp;&nbsp;arr.forEach(element => { <br></code>
+            
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;    let regex = new RegExp(element, 'gi'); <br></code>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;    let matchArr = str.match(regex); <br></code>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;    if (matchArr.length > 1) { <br></code>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;      console.log("inside if") <br></code>
+            <code> &nbsp;&nbsp;&nbsp;&nbsp;     return isTrue = false; <br></code>
+            <code> &nbsp;&nbsp;   }  <br></code>
+            <code>}) <br></code>
+            <code>return isTrue; <br></code>
+          <code>} <br></code>
+          
+    </p>
+</article>
+
+</body>
